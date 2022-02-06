@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+
+:root {
+    /* ## Colors */
+
+    /* ### Primary */
+
+--cyan: hsl(179, 62%, 43%);
+--bright-yellow: hsl(71, 73%, 54%);
+
+    /* ### Neutral */
+
+--light-gray: hsl(204, 43%, 93%);
+--grayish-blue: hsl(218, 22%, 67%);
+
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Karla', sans-serif;
+    font-size: 16px;
+}
+
+body {
+    background-color: var(--light-gray);
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    background-color: var(--bright-yellow);
+    padding: 1rem 3rem;
+    border-radius: 0.3rem;
+    text-align: center;
+}
+
+/* Flex */
+
+.pricing-flex, .desc-flex, .footer-flex {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 80%;
+    justify-content: space-between;
+    margin: 1rem auto;
+}
+
+.footer-flex {
+    justify-content: space-around;
+}
+
+/* Flex-end */
+
+.desc-flex h1 {
+    color: var(--cyan);
+}
+
+.desc-flex h3 {
+    color: var(--bright-yellow);
+}
+
+.desc-flex p {
+    color: var(--grayish-blue);
+    line-height: 1.6rem;
+}
+
+.pricing-flex-1-span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.pricing-flex-1 h3 {
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.pricing-flex-1-span span:first-child {
+    font-size: 35px;
+}
+
+.pricing-flex-1-span span:nth-child(2) {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-flex-1 {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Grid */
+.container {
+    width: 80%;
+    margin: 5rem auto;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+        "desc"
+        "pricing"
+        "footer";
+}
+
+.desc {
+    grid-area: desc;
+    background-color: #fff;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.pricing {
+    grid-area: pricing;
+    background-color: var(--cyan);
+    color: #fff;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: rgb(0, 196, 196);
+    color: #fff;
+    border-radius: 0 0 0.5rem 0.5rem;
+}
+/* Grid-end */
+
+/* Media */
+
+@media (min-width: 600px){
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    main {
+        height: 450px;
+        max-width: 750px;
+    }
+
+    .container {
+        height: 100%;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+            "desc desc"
+            "pricing footer";
+    }
+
+    .footer {
+        border-radius: 0 0 0.5rem 0;
+    }
+
+    .pricing {
+        border-radius: 0 0 0 0.5rem;
+    }
+}
